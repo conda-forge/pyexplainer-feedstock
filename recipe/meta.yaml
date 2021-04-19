@@ -1,5 +1,5 @@
 {% set name = "pyexplainer" %}
-{% set version = "0.1.10" %}
+{% set version = "0.1.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f48facf6cd60d9ae576d266074dbf1743640c0a3cc06d1f577426a216b4a89f0
+  sha256: 6027e2e78372f5daea268d1a0a544d0cb60164f2c90aaa1e63811dcee7584bc2
 
 build:
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   number: 0
   noarch: python
-  
+
 requirements:
   host:
     - python >=3.8
@@ -31,14 +31,14 @@ requirements:
 
 test:
   imports:
-    - pyexplainer   
+    - pyexplainer
 
 about:
   home: https://github.com/awsm-research/pyExplainer
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: 'An Explainable AI tool for Software Analytics'
+  summary: An Explainable AI tool for Software Analytics
   description: |
     pyexplainer is a python package that generates explainable Machine Learning predictions
     from the so-called 'black-box model' such as random forest, moreover, pyexplainer 
