@@ -1,7 +1,6 @@
 {% set name = "pyexplainer" %}
 {% set version = "1.0.0" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
