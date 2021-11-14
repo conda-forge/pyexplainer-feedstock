@@ -1,5 +1,5 @@
 {% set name = "pyexplainer" %}
-{% set version = "1.1.4" %}
+{% set version = "1.1.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 97490125a2c9fa2d75847f6016f5fb24eb8f227a76e30db6e6b4b7ddc373b7cf
+  sha256: f3ea265f6bb642a5ba9916a19843bc4de937b6f50fd0d76368ef6d745ad20e58
 
 
 build:
