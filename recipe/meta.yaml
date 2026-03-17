@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 3ba373e6d7ffe3d99d6fb3a67a97ab82fb1c14bba0c69d3bd282f0355e16ba31
 
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - poetry
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - scikit-learn
     - numpy
     - scipy
@@ -31,6 +31,8 @@ requirements:
     - statsmodels
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pyexplainer
 
